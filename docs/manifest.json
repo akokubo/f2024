@@ -1,0 +1,30 @@
+{
+  "name"              : "詐欺抵抗力診断R",
+  "short_name"        : "R4F",
+  "description"       : "詐欺抵抗力診断の改良版",
+  "start_url"         : "./index.html?utm_source=homescreen",
+  "display"           : "standalone",
+  "background_color"  : "#faf8ee",
+  "theme_color"       : "#87b2ff",
+  "icons": [
+    {
+      "src"           : "./apple-touch-icon.png",
+      "sizes"         : "192x192",
+      "type"          : "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src"           : "./android-chrome-256x256.png",
+      "sizes"         : "256x256",
+      "type"          : "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src"           : "./icon-512x512.png",
+      "sizes"         : "512x512",
+      "type"          : "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

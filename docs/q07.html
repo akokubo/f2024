@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問07 | 詐欺抵抗力診断</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="./css/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./android-chrome-256x256.png">
+    <link rel="manifest" href="manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then((reg) => console.log('Service worker registered.', reg));
+      }
+    </script>
+  </head>
+  <body>
+
+    <!-- ホームへ戻る -->
+    <div class="modal fade" id="homeModal" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="homeModalLabel">ホームへ戻る</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>詐欺抵抗力診断Rを中断し、記録を消して最初に戻るには以下をクリックしてください。</p>
+            <p><a class="btn btn-success btn-lg" href="./index.html">記録を消して最初に戻る</a></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 詐欺抵抗力診断Rについて -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="aboutModalLabel">詐欺抵抗力診断Rについて</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>元々、「詐欺抵抗力診断」は科学技術振興機構 社会技術研究開発センター(JST RISTEX)の研究プロジェクトで開発されました。</p>
+            <p>研究開発プロジェクトは、2017年10月〜2021年3月に実施された「高齢者の詐欺被害を防ぐしなやかな地域連携モデルの研究開発」(研究代表者・渡部諭 秋田県立大学 教授 当時)です。</p></p>
+            <p>今回公開している「詐欺抵抗力診断R」は、日本社会心理学会第65回大会での小久保温の口頭発表O1204「詐欺抵抗力診断アプリの評価と改善」2024年9月1日のデモバージョンです。</p>
+            <p>このデモは、八戸工業大学の小久保温が、汎化性能の大幅な向上と質問数の大幅な削減を行なったバージョンです。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="contactModalLabel">お問い合わせ</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>責任者(小久保温)へのお問い合わせ先は以下です。</p>
+            <p>
+<pre>〒031-8501 青森県八戸市妙字大開88-1
+八戸工業大学 工学部 工学科 システム情報工学コース
+小久保 温
+
+TEL: 0178-25-3111(八戸工業大学代表)
+
+e-mail: kokubo★hi-tech.ac.jp
+　※★を＠（アットマーク）に変更してください</pre>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- プライバシー・ポリシー -->
+    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="privacyPolicyModalLabel">プライバシー・ポリシー</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+            <p>詐欺抵抗力診断Rの回答データは、お使いのブラウザに保存されます。ブラウザを終了するか最初のページに戻ると、データがブラウザから削除されます。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#homeModal"><i class="bi bi-shield-check"></i> 詐欺抵抗力診断R</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">ホーム</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">アプリについて</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">お問い合わせ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">プライバシーポリシー</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <main class="mt-4 pt-5 pb-5" style="margin-bottom: 70px;">
+      
+      <div class="container">
+      <h1>問07</h1>
+      
+<div class="progress mb-4" role="progressbar" aria-label="Animated striped example" aria-valuenow="66.7" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 66.7%"></div>
+</div>
+
+      <p class="fs-4">自分で、「自分の将来の限界が見えている」と思う</p>
+      
+
+        
+          <div class="form-check" style="padding-left: 0;">
+  
+  <input class="btn-check" type="radio" name="q07" id="q07-0" value="1">
+  <label class="btn btn-outline-warning radio-btn m-1" for="q07-0">そう思わない</label>
+  
+  <input class="btn-check" type="radio" name="q07" id="q07-1" value="2">
+  <label class="btn btn-outline-warning radio-btn m-1" for="q07-1"> あまりそう思わない</label>
+  
+  <input class="btn-check" type="radio" name="q07" id="q07-2" value="3">
+  <label class="btn btn-outline-warning radio-btn m-1" for="q07-2"> ややそう思う</label>
+  
+  <input class="btn-check" type="radio" name="q07" id="q07-3" value="4">
+  <label class="btn btn-outline-warning radio-btn m-1" for="q07-3"> そう思う </label>
+  
+</div>
+<div class="mt-3">
+  <button class="btn btn-success btn-lg" id="submit" disabled>次へ</button>
+</div>
+<script>const nameValue = 'q07';</script>
+<script>const nextValue = 'q08';</script>
+
+<script src="./js/radio.js"></script>
+        
+      </div>
+    </main>
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- <script>document.documentElement.requestFullscreen();</script> -->
+  </body>
+</html>

@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+nav { 
+    font-weight: 900;
+    text-shadow: 0 0 2px black, 0 0 2px black;
+}
+
+body.index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: -webkit-fill-available;
+    min-height: 450px;
+    background-color: #714f44;
+    background-image: url("../images/main-visual.jpg");
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    text-shadow: 0 0 2px black, 0 0 2px black;
+    text-align: center;
+    font-weight: 900;
+}
+
+#inner {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#inner h1 {
+    margin-top: 120px;
+}
+
+#inner .revert {
+    text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black;
+}
+
+#try a {
+    border: 3px solid white;
+    box-shadow: 0px 0px 7px black, 0px 0px 7px black, 0px 0px 7px black;
+}
+
+label.radio-btn::before {
+    content: "○ ";
+}
+
+input[type="radio"]:checked + label.radio-btn::before {
+    content: "◉ ";
+}
+
+.fs-7-sm {
+    font-size: 0.75rem;
+}
+
+header {
+    background-color: #EA6732;
+}
+
+.nav-link {
+    color: white;
+}
+
+.btn.btn-success.btn-lg {
+    /* background-color: #EA6732; */
+}
+
+label.btn.btn-outline-warning.radio-btn {
+    color: #333;
+    border-color: #EA6732;
+}
+
+header nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark {
+    background-color: #EA6732 !important;
+}
+
+@media screen and (min-width: 768px) {
+    .fs-7-sm {
+        font-size: 1rem;
+    }
+}
